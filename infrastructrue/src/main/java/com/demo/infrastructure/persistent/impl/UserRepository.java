@@ -40,8 +40,11 @@ public class UserRepository implements IUserRepository {
         List<User> users = new ArrayList<>();
         List<UserPo> userPo = this.userMapper.findList();
 
+
+
         userPo.forEach(item->{
-            User user =new User(item.getId(),item.getName(),item.getPwd(),null);
+            AddressPo addressPo = this.addressMapper.findByUserId(item.getId());
+            User user =new User(item.getId(),item.getName(),item.getPwd(),new Address(addressPo.getProvince(),addressPo.getCity(),addressPo.getArea(),addressPo.getDetail()));
             users.add(user);
         });
         return users;

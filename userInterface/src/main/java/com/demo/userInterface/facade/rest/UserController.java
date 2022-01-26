@@ -17,7 +17,7 @@ import java.util.List;
  * @date 2022/1/25
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("user")
 public class UserController {
 
     final UserService userService;
@@ -29,7 +29,7 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<UserDTO> list(){
         return new UserAssembler().tran(this.userRepository.findList());
     }
