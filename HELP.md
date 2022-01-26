@@ -26,6 +26,7 @@ domain层
 1.问题
 基础设施层为什么在是在下层
 因为 repository impl  repostiroyImpl  所以使用这种架构并通过DI
-2.  interface层  请求domain层
+2. interface层  请求domain层
 是否是按项目中的方式把 dto转成do,再到domain操作。 需要确认
-3.依赖 理论上  domain层只引入 bean管理的依赖来实现可被依赖注入， interface层引入mvc依赖  ， 基础设施层引入具体依赖(mysql , mq 等)
+3.依赖 理论上  domain层只引入 bean管理的依赖来实现可被依赖注入， interface层引入mvc依赖  ， 基础设施层引入具体依赖(mysql , mq )
+4.需要微服务额外提供RPC客户端的， 可以新增一个模块 rpc 来提供被别的服务访问的能力 如 feignClient/grpc等
