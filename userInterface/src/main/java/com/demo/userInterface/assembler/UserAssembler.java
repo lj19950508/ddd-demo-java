@@ -2,8 +2,9 @@ package com.demo.userInterface.assembler;
 
 import com.demo.application.dto.ChangpwdDTO;
 import com.demo.domain.biz1.entity.User;
-import com.demo.userInterface.vo.ChangpwdReq;
-import com.demo.userInterface.vo.UserRes;
+import com.demo.rpcclient.vo.AddressRes;
+import com.demo.rpcclient.vo.ChangpwdReq;
+import com.demo.rpcclient.vo.UserRes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,13 @@ public class UserAssembler {
             userDTO.setId(item.getId());
             userDTO.setName(item.getName());
             userDTO.setPwd(item.getPwd());
-            userDTO.setAddress(item.getAddress());
+
+            AddressRes addressRes = new AddressRes();
+            addressRes.setArea(item.getAddress().getArea());
+            addressRes.setProvince(item.getAddress().getProvince());
+            addressRes.setCity(item.getAddress().getCity());
+            addressRes.setDetail(item.getAddress().getDetail());
+            userDTO.setAddress(addressRes);
             userDTOS.add(userDTO);
         });
         return userDTOS;

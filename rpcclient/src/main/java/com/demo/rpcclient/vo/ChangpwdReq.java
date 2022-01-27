@@ -1,4 +1,4 @@
-package com.demo.userInterface.vo;
+package com.demo.rpcclient.vo;
 
 /**
  * @author linjie

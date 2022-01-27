@@ -1,6 +1,5 @@
-package com.demo.userInterface.vo;
+package com.demo.rpcclient.vo;
 
-import com.demo.domain.biz1.valueobject.Address;
 
 /**
  * @author linjie
@@ -10,7 +9,7 @@ public class UserRes {
     private Long id;
     private String name;
     private String pwd;
-    private Address address;
+    private AddressRes address;
 
     public Long getId() {
         return id;
@@ -36,11 +35,11 @@ public class UserRes {
         this.pwd = pwd;
     }
 
-    public Address getAddress() {
+    public AddressRes getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(AddressRes address) {
         this.address = address;
     }
 }

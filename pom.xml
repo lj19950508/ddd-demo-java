@@ -8,6 +8,7 @@
         <module>userInterface</module>
         <module>application</module>
         <module>infrastructrue</module>
+        <module>rpcclient</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
