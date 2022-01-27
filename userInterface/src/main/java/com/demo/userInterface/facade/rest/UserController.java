@@ -3,7 +3,7 @@ package com.demo.userInterface.facade.rest;
 import com.demo.domain.biz1.repository.IUserRepository;
 import com.demo.application.service.UserService;
 import com.demo.userInterface.assembler.UserAssembler;
-import com.demo.userInterface.dto.ChangpwdReq;
+import com.demo.userInterface.vo.ChangpwdReq;
 import com.demo.userInterface.vo.UserRes;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

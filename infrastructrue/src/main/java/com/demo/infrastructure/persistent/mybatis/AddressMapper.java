@@ -1,6 +1,6 @@
 package com.demo.infrastructure.persistent.mybatis;
 
-import com.demo.infrastructure.persistent.pojo.AddressPo;
+import com.demo.infrastructure.persistent.po.AddressPo;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -12,6 +12,9 @@ public interface AddressMapper {
 
     AddressPo findByUserId(Long userId);
 
-    void save(AddressPo address);
+
+    void insert(AddressPo address);
+
+    void update(AddressPo address);
 
 }

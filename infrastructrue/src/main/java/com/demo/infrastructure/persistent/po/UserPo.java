@@ -1,4 +1,4 @@
-package com.demo.infrastructure.persistent.pojo;
+package com.demo.infrastructure.persistent.po;
 
 /**
  * @author linjie

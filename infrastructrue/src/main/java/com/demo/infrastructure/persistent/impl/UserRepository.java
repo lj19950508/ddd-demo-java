@@ -5,8 +5,8 @@ import com.demo.domain.biz1.repository.IUserRepository;
 import com.demo.domain.biz1.valueobject.Address;
 import com.demo.infrastructure.persistent.mybatis.AddressMapper;
 import com.demo.infrastructure.persistent.mybatis.UserMapper;
-import com.demo.infrastructure.persistent.pojo.AddressPo;
-import com.demo.infrastructure.persistent.pojo.UserPo;
+import com.demo.infrastructure.persistent.po.AddressPo;
+import com.demo.infrastructure.persistent.po.UserPo;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -59,14 +59,21 @@ public class UserRepository implements IUserRepository {
         userPo.setId(user.getId());
         userPo.setPwd(user.getPwd());
         userPo.setName(user.getName());
-        userMapper.save(userPo);
         AddressPo addressPo = new AddressPo();
         addressPo.setUserId(user.getId());
         addressPo.setCity(user.getAddress().getCity());
         addressPo.setProvince(user.getAddress().getProvince());
         addressPo.setArea(user.getAddress().getArea());
         addressPo.setDetail(user.getAddress().getDetail());
-        addressMapper.save(addressPo);
+        if(user.exist()){
+            userMapper.update(userPo);
+            addressMapper.update(addressPo);
+        }else{
+            userMapper.insert(userPo);
+            addressMapper.insert(addressPo);
+        }
+
+
 
     }
 }

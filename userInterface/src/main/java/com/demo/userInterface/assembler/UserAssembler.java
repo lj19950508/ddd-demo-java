@@ -2,7 +2,7 @@ package com.demo.userInterface.assembler;
 
 import com.demo.application.dto.ChangpwdDTO;
 import com.demo.domain.biz1.entity.User;
-import com.demo.userInterface.dto.ChangpwdReq;
+import com.demo.userInterface.vo.ChangpwdReq;
 import com.demo.userInterface.vo.UserRes;
 
 import java.util.ArrayList;

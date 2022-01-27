@@ -27,6 +27,10 @@ public class User {
         this.pwd=pwd;
     }
 
+    public boolean exist(){
+        return id!=null;
+    }
+
     //**此为private方法， 构造器通过此验证参数
     private void setId(Long id) {
         //验证与业务有关的逻辑

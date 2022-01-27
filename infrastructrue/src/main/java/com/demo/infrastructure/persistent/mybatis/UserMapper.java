@@ -1,6 +1,7 @@
 package com.demo.infrastructure.persistent.mybatis;
 
-import com.demo.infrastructure.persistent.pojo.UserPo;
+import com.demo.domain.biz1.entity.User;
+import com.demo.infrastructure.persistent.po.UserPo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public interface UserMapper {
 
     List<UserPo> findList();
 
-    void save(UserPo user);
+    void insert(UserPo user);
+
+    void update(UserPo user);
 
 }
