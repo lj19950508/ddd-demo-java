@@ -1,5 +1,6 @@
-package com.demo.domain.biz1.service;
+package com.demo.application.service;
 
+import com.demo.application.dto.ChangpwdDTO;
 import com.demo.domain.biz1.entity.User;
 import com.demo.domain.biz1.repository.IUserRepository;
 import org.springframework.stereotype.Service;
@@ -17,12 +18,10 @@ public class UserService {
         this.userRepository=userRepository;
     }
 
-    public void changepwd(User user){
+    public void changepwd(ChangpwdDTO dto){
 
-        User queryUser = userRepository.findById(user.getId());
-
-        queryUser.changepwd("123456");
-
+        User queryUser = userRepository.findById(dto.getUserId());
+        queryUser.changepwd(dto.getPwd());
         userRepository.save(queryUser);
 
     }

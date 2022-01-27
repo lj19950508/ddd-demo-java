@@ -1,10 +1,10 @@
 package com.demo.userInterface.facade.rest;
 
 import com.demo.domain.biz1.repository.IUserRepository;
-import com.demo.domain.biz1.service.UserService;
+import com.demo.application.service.UserService;
 import com.demo.userInterface.assembler.UserAssembler;
-import com.demo.userInterface.dto.ChangpwdDTO;
-import com.demo.userInterface.dto.UserDTO;
+import com.demo.userInterface.dto.ChangpwdReq;
+import com.demo.userInterface.dto.UserRes;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,12 +30,12 @@ public class UserController {
     }
 
     @GetMapping("")
-    public List<UserDTO> list(){
+    public List<UserRes> list(){
         return new UserAssembler().tran(this.userRepository.findList());
     }
 
     @PostMapping("/changpwd")
-    public String changepwd(ChangpwdDTO dto){
+    public String changepwd(ChangpwdReq dto){
         userService.changepwd(new UserAssembler().tran(dto));
         return "修改成功";
     }

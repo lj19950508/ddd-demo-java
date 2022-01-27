@@ -4,7 +4,7 @@ package com.demo.userInterface.dto;
  * @author linjie
  * @date 2022/1/25
  */
-public class ChangpwdDTO {
+public class ChangpwdReq {
     private Long userId;
     private String pwd;
 

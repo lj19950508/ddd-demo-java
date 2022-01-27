@@ -6,7 +6,7 @@ import com.demo.domain.biz1.valueobject.Address;
  * @author linjie
  * @date 2022/1/26
  */
-public class UserDTO {
+public class UserRes {
     private Long id;
     private String name;
     private String pwd;

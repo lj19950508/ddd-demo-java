@@ -1,8 +1,9 @@
 package com.demo.userInterface.assembler;
 
+import com.demo.application.dto.ChangpwdDTO;
 import com.demo.domain.biz1.entity.User;
-import com.demo.userInterface.dto.ChangpwdDTO;
-import com.demo.userInterface.dto.UserDTO;
+import com.demo.userInterface.dto.ChangpwdReq;
+import com.demo.userInterface.dto.UserRes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,17 +12,21 @@ import java.util.List;
  * @author linjie
  * @date 2022/1/25
  */
+
+//do可转dto ， but dto不可转do
 public class UserAssembler {
 
 
-    public User tran(ChangpwdDTO dto){
-      return new User(dto.getUserId(),null,dto.getPwd(),null);
-    };
+//    public User tran(ChangpwdDTO dto){
+//      return new User(dto.getUserId(),null,dto.getPwd(),null);
+//    };
 
-    public List<UserDTO> tran(List<User> userList){
-        List<UserDTO> userDTOS = new ArrayList<>();
+    //如何使用映射
+
+    public List<UserRes> tran(List<User> userList){
+        List<UserRes> userDTOS = new ArrayList<>();
         userList.forEach(item->{
-            UserDTO userDTO = new UserDTO();
+            UserRes userDTO = new UserRes();
             userDTO.setId(item.getId());
             userDTO.setName(item.getName());
             userDTO.setPwd(item.getPwd());
@@ -31,6 +36,15 @@ public class UserAssembler {
         return userDTOS;
 
     }
+
+    public ChangpwdDTO tran(ChangpwdReq req){
+      ChangpwdDTO changpwdDTO =new ChangpwdDTO();
+      changpwdDTO.setUserId(req.getUserId());
+      changpwdDTO.setPwd(req.getPwd());
+      return changpwdDTO;
+
+    }
+
 
 
 
