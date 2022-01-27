@@ -1,4 +1,4 @@
-package com.demo.userInterface.dto;
+package com.demo.userInterface.vo;
 
 import com.demo.domain.biz1.valueobject.Address;
 

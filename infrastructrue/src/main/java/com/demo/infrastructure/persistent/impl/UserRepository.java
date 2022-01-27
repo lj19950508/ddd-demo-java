@@ -53,6 +53,8 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public void save(User user) {
+        //需要有一层适配器把user->userPo
+        //todo 这一边放不知道如何去掉do的 getter
         UserPo userPo = new UserPo();
         userPo.setId(user.getId());
         userPo.setPwd(user.getPwd());
