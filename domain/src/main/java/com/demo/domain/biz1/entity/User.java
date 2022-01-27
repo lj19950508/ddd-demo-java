@@ -13,10 +13,10 @@ public class User {
     private Address address;
 
     public User(Long id, String name, String pwd, Address address) {
-        this.id = id;
-        this.name = name;
-        this.pwd = pwd;
-        this.address = address;
+        this.setId(id);
+        this.setName(name);
+        this.setPwd(pwd);
+        this.setAddress(address);
     }
 
     /**
@@ -25,6 +25,27 @@ public class User {
      */
     public void changepwd(String pwd){
         this.pwd=pwd;
+    }
+
+    //**此为private方法， 构造器通过此验证参数
+    private void setId(Long id) {
+        //验证与业务有关的逻辑
+        this.id = id;
+    }
+
+    private void setName(String name) {
+        if(name.equals("julina")){
+            throw new RuntimeException("不让你注册");
+        }
+        this.name = name;
+    }
+
+    private void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    private void setAddress(Address address) {
+        this.address = address;
     }
 
     public Long getId() {
