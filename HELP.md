@@ -21,15 +21,21 @@ application 应用层是很轻的一层
  1. 负责编排domain服务与第三方服务
  2. 第三方服务(通过防腐层external),
  3. 不参与任何业务代码编写(参与调度repo调度第三方,调度领域服务与领域方法)
+ 
 
 domain层 
  1. 聚焦业务，理论上只要引入DI模块，不引入外部任何依赖实现 ，
  2. 其中对领域的业务操作写在实体内， 对象的操作以及编排写在领域服务内(理论上对业务的操作不会调用getset方法，直接使用成员变量) (充血模型)
  3.业务代码指的是 (写操作) （cqrs）
+ 4.factory创建复杂对象
 
 rpcclient层
  1. 提供本服务的rpcclient给 其他同构服务用,如果是异构服务请考虑grpc
 
+
+cqrs
+command操作返回void
+在每个command操作执行完成时都将发布领域事件
 
 ### 问题
 1. 基础设施层为什么在是在下层
@@ -40,7 +46,7 @@ rpcclient层
 5. 想办法去掉domain的getter方法，do需要转换为PO，所以需要一层getter.
 
 ### 概念
-聚合 Aggergate  代表多个实体
+聚合 Aggergate  代表多个实体  只有聚合才能拥有资源库
 聚合根 AggergateRoot  聚合根是一个实体, 通过ID可以从聚合根访问与该聚合根 管理的实体 
 实体 Entity   领域对象 DO
 值对象 ValueObject   不含生命周期 依赖于 上层实体   如项目中的address
