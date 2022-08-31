@@ -1,0 +1,5 @@
+{
+    "java.configuration.maven.globalSettings": "/Users/gon/maven/conf/settings.xml",
+    "maven.executable.path": "/Users/gon/maven/bin/mvn",
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

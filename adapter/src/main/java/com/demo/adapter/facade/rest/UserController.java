@@ -1,10 +1,10 @@
-package com.demo.userInterface.facade.rest;
+package com.demo.adapter.facade.rest;
 
 import com.demo.domain.biz1.repository.IUserRepository;
 import com.demo.application.service.UserService;
 import com.demo.rpcclient.vo.ChangpwdReq;
 import com.demo.rpcclient.vo.UserRes;
-import com.demo.userInterface.assembler.UserAssembler;
+import com.demo.adapter.assembler.UserAssembler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

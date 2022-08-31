@@ -1,6 +1,17 @@
 ### 依赖关系
 ```
-infrastructrue->userinterface->application->domain
+六边形架构
+
+adapter 端口适配器/一切的入口/出口实现
+controller
+mq
+redis
+mysql
+
+application 应用层/负责编排
+
+
+infrastructrue->adapter->application->domain
                     |
                     \/
                    rpcclient
@@ -13,7 +24,7 @@ infrastructrue
  3. 工具类,mq类等，
  4. 并通过DI注入上层
 
-userinterface 
+adapter 
  1. 负责定义入口，可以通过rest,grpc,graphql等方式对外部暴露
  2. 实现 do 转 vo的适配器
 

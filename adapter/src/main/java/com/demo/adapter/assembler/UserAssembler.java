@@ -1,4 +1,4 @@
-package com.demo.userInterface.assembler;
+package com.demo.adapter.assembler;
 
 import com.demo.application.dto.ChangpwdDTO;
 import com.demo.domain.biz1.entity.User;
