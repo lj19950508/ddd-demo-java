@@ -52,19 +52,6 @@ public class User {
         this.address = address;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getPwd() {
-        return pwd;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
 }
