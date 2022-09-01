@@ -5,7 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>domain</module>
-        <module>userInterface</module>
+        <module>adapter</module>
         <module>application</module>
         <module>infrastructrue</module>
         <module>rpcclient</module>
