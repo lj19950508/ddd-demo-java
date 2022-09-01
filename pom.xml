@@ -20,7 +20,7 @@
     <name>DDD-DEMO</name>
     <description>DDD-DEMO</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
     <dependencies>
         <!--    理论上应该做成只引用 ioc    -->

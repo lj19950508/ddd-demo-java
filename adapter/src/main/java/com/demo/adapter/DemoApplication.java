@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.adapter;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @date 2022/9/1
  */
 @SpringBootApplication
-//@ComponentScan(basePackages={"com.demo"})
+@ComponentScan(basePackages={"com.demo"})
 //@MapperScan("com.demo.infrastructure.persistent.mybatis")
 public class DemoApplication {
     public static void main(String[] args) {
