@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
  * @author linjie
  * @date 2022/1/25
  */
+
+/**
+ * 主要功能是调度各实体对象等，不负责业务具体操作
+ */
 @Service
 public class UserService {
 
@@ -16,6 +20,7 @@ public class UserService {
     public UserService(IUserRepository userRepository) {
         this.userRepository=userRepository;
     }
+
 
 //    public void changepwd(ChangpwdDTO dto){
 //
