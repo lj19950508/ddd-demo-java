@@ -1,4 +1,4 @@
-package com.demo.inf;
+package com.demo.start;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
