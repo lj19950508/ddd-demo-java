@@ -1,0 +1,12 @@
+## clinetApi提出 w
+## 明确规范      w
+
+#  start - > adapter （微服务）
+
+#  single -> adapter (单体模块)
+
+import ddd-demo  exclude start
+
+# cqrs  rpc(grpc)    mq
+
+#

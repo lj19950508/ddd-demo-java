@@ -1,13 +1,14 @@
-package com.demo.adapter.in.web.rest;
+package com.demo.adapter.in.http.rest.api;
 
+import com.demo.domain.biz1.entity.User;
 import com.demo.domain.biz1.repository.IUserRepository;
 import com.demo.application.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
 
 /**
  * @author linjie
@@ -26,14 +27,8 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-//    @GetMapping("")
-//    public List<UserRes> list(){
-//        return new UserAssembler().tran(this.userRepository.findList());
-//    }
-//
-//    @PostMapping("/changpwd")
-//    public String changepwd(ChangpwdReq dto){
-//        userService.changepwd(new UserAssembler().tran(dto));
-//        return "修改成功";
-//    }
+    @GetMapping("")
+    public String list() {
+        return "hello wrold";
+    }
 }

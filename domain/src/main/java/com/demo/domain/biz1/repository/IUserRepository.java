@@ -11,6 +11,12 @@ import java.util.List;
 public interface IUserRepository {
 
 
+//    Load
+
+//    Add
+//    Update
+//    Save
+//    Remove
     User findById(Long id);
 
     List<User> findList();
