@@ -45,7 +45,7 @@ rpcclient层
 
 
 cqrs
-command操作返回void
+command操作返回void，然后用service去聚合
 在每个command操作执行完成时都将发布领域事件
 
 ### 问题
@@ -71,6 +71,20 @@ command操作返回void
 限界上下文  依据拆分域
 协作上下文
 
+### 
+对象核心问题
+PO 即是数据库对应对象 与数据库完全对应
+DO 则是领域对象 可能包含ValueObject ，是一个高内部的对象，里面包含了一些行为功能
+Command 传入的命令对象 ，一般在做修改，删除时传入
+Query  传入的查询对象， 一般在做复杂查询传入
+QueryResult 查询返回的对象 
+DTO 一般是在Service中用到，复杂组装复杂通用返回值
+1.PO 和DO 的转换一般在adapter层完成， 在domain 只有do对象 没有po对象
+2.do和 QueryResult/DTO的转换一般在 application层完成， 
+3.command和do的转换一般也是在application层完成
+
+### 未构思
+1.事件总线
 
 
 

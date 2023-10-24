@@ -19,8 +19,13 @@ public interface IUserRepository {
 //    Remove
     User findById(Long id);
 
+//    这个由于cqrs 将会挪到queryiml
     List<User> findList();
 
+//    全量更新或者 添加 ，  更新时候需要先findById
     void save(User user);
 
+//  需要一个update 按需更新  update
+
+//    remove（LongId）
 }

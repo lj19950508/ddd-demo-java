@@ -7,7 +7,9 @@ package com.demo.adapter.out.persistent.pojo;
 
 public class Resource {
 
-    private long id;  //资源id
+    private Long id;  //资源id
+
+    private Long categoryId;
     private String code;
     private String value;
 

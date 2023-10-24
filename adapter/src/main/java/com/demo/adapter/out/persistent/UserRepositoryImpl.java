@@ -1,4 +1,4 @@
-package com.demo.adapter.out.persistent.pojo;
+package com.demo.adapter.out.persistent;
 
 import com.demo.domain.biz1.entity.User;
 import com.demo.domain.biz1.repository.IUserRepository;
